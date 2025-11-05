@@ -20,7 +20,7 @@ class Mercantil:
             print("index invalido")
             return
         if self.caixas[index] is not None:
-            print("caixa oxupado")
+            print("caixa ocupado")
             return
         if len(self.espera) == 0:
             print("ninguem esperando")

@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-05_15-30-12",
+            "content": "class Pessoa:\n    def __init__(self, nome: str) -> None:\n        self.nome = nome\n    \n    def __str__(self):\n        return self.nome\n    \nclass Mercantil:\n    def __init__(self, n_caixas: int): \n        self.espera: list[Pessoa] = []\n        self.caixas: list[Pessoa | None] = []\n        for _ in range(n_caixas):\n            self.caixas.append(None)\n\n    def chegar(self, pessoa: Pessoa):\n        self.espera.append(pessoa)\n\n    def chamar(self, index:int):\n        if index < 0 or index >= len(self.caixas):\n            print(\"index invalido\")\n            return\n        if self.caixas[index] is not None:\n            print(\"caixa oxupado\")\n            return\n        if len(self.espera) == 0:\n            print(\"ninguem esperando\")\n            return\n        self.caixas[index] = self.espera[0]\n        del self.espera[0]\n\n    def finalizar(self, index: int) -> Pessoa | None:\n        if index < 0 or index >= len(self.caixas):\n            print(\"index invalido\")\n",
+            "lines": "33"
+        }
+    ]
+}
