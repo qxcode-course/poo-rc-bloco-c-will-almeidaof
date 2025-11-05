@@ -8,11 +8,11 @@ sources:
   cache_timestamp: ''
   filters: null
 - database: poo
-  link: /workspaces/poo-rc-bloco-c-will-almeidaof/myrep/.tko/cache/poo/Readme.md
+  link: https://github.com/qxcodepoo/arcade.git
   type: clone
   branch: master
-  cache_path: /workspaces/poo-rc-bloco-c-will-almeidaof/myrep/.tko/cache/poo/Readme.md
-  cache_timestamp: '2025-11-05 15:25:26'
+  cache_path: ''
+  cache_timestamp: '2025-11-05 18:18:32'
   filters:
   - listas
 expanded:
