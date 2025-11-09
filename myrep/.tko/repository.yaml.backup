@@ -12,7 +12,7 @@ sources:
   type: clone
   branch: master
   cache_path: ''
-  cache_timestamp: '2025-11-05 18:18:32'
+  cache_timestamp: '2025-11-09 20:21:32'
   filters:
   - listas
 expanded:
@@ -24,6 +24,6 @@ flags:
   tracks: 0
   tasks: 0
   graph: 1
-  xray: 1
+  xray: 0
 lang: py
 selected: poo@budega
