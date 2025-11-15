@@ -1,0 +1,49 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-15_02-29-29",
+            "content": "@@ -1,288 +0,0 @@\n-class Grafite:%0A    def __init__(self, dureza : str, calibre: float, size: int):%0A        self.dureza = dureza%0A        self.calibre = calibre%0A        self.tamanho = size%0A%0A    def __str__(self):%0A        return f%22%7Bself.dureza%7D:%7Bself.calibre%7D:%7Bself.tamanho%7D%22%0A    %0Agrafite = Grafite(2B,0.5,10)%0A\n",
+            "lines": "0"
+        },
+        {
+            "label": "2025-11-15_02-47-03",
+            "content": "@@ -274,12 +274,10 @@\n ite(\n-%22\n 2B\n-%22\n ,0.5\n",
+            "lines": "10"
+        },
+        {
+            "label": "2025-11-15_02-47-39",
+            "content": "@@ -287,18 +287,4 @@\n 10)%0A\n-print(grafite)\n",
+            "lines": "10"
+        },
+        {
+            "label": "2025-11-15_02-47-58",
+            "content": "@@ -255,341 +255,8 @@\n     \n-%0A%0Aclass Lapiseira:%0A    def __init__(self,calibre : float):%0A        self.calibre = calibre%0A        self.bico: list%5BGrafite%7CNone%5D = %5B%5D%0A        self.tambor: list%5BGrafite%5D = %5B%5D%0A%0A    def inserir(self, grafite: Grafite):%0A        self.tambor.append(grafite)%0A%0A    def __str__(self):%0A        return f%22%7Bself.tambor%7D%22%0Alapiseira = Lapiseira(0.5)\n %0Agra\n@@ -279,33 +279,21 @@\n 2B%22,\n-4.0\n+0.5\n ,10)%0A\n-lapiseira.inserir\n+print\n (gra\n@@ -297,14 +297,8 @@\n grafite)\n-%0Aprint\n",
+            "lines": "11"
+        },
+        {
+            "label": "2025-11-15_03-04-10",
+            "content": "@@ -652,15 +652,4 @@\n rint\n-(lapiseira)\n",
+            "lines": "25"
+        },
+        {
+            "label": "2025-11-15_03-04-40",
+            "content": "@@ -538,77 +538,8 @@\n     \n-tambor = %22:%22.join(%5Bstr(x)if x else %22%22 for x in self.tambor%5D)%0A        \n retu\n@@ -544,16 +544,21 @@\n turn f%22%7B\n+self.\n tambor%7D%22\n",
+            "lines": "25"
+        },
+        {
+            "label": "2025-11-15_03-08-57",
+            "content": "@@ -649,16 +649,74 @@\n ra(0.5)%0A\n+grafite = Grafite(%222B%22,4.0,10)%0Alapiseira.inserir(grafite)%0A\n print(la\n",
+            "lines": "26"
+        },
+        {
+            "label": "2025-11-15_03-09-30",
+            "content": "@@ -653,66 +653,8 @@\n .5)%0A\n-grafite = Grafite(%222B%22,4.0,10)%0Alapiseira.inserir(grafite)%0A\n prin\n",
+            "lines": "24"
+        },
+        {
+            "label": "2025-11-15_03-10-03",
+            "content": "class Grafite:\n    def __init__(self, dureza : str, calibre: float, size: int):\n        self.dureza = dureza\n        self.calibre = calibre\n        self.tamanho = size\n\n    def __str__(self):\n        return f\"{self.dureza}:{self.calibre}:{self.tamanho}\"\n    \n\nclass Lapiseira:\n    def __init__(self,calibre : float):\n        self.calibre = calibre\n        self.bico: list[Grafite|None] = []\n        self.tambor: list[Grafite] = []\n\n    def inserir(self, grafite: Grafite):\n        self.tambor.append(grafite)\n\n    def __str__(self):\n        tambor = \":\".join([str(x)if x else \"\" for x in self.tambor])\n        return f\"{tambor}\"\nlapiseira = Lapiseira(0.5)\ngrafite = Grafite(\"2B\",4.0,10)\nlapiseira.inserir(grafite)\nprint(lapiseira)",
+            "lines": "26"
+        }
+    ]
+}
