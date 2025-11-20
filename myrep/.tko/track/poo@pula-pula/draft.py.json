@@ -2,8 +2,313 @@
     "patches": [
         {
             "label": "2025-11-19_20-26-25",
-            "content": "",
+            "content": "@@ -1,551 +0,0 @@\n-class Kid:%0A    def __init__(self, nome: str , idade: int):%0A        self.nome = nome%0A        self.idade = idade%0A%0A        def __str__(self):%0A            return f%22%7Bself.nome%7D:%7Bself.idade%7D%22%0A        %0Aclass Trampoline:%0A    def __init__(self):%0A        self.playing: list%5BKid%5D = %5B%5D%0A        self.waiting: list%5BKid%5D = %5B%5D%0A%0A%0A    def __str__(self):%0A        waiting = %22:%22.join(%5Bstr(x) if x else %22%22 for x in self.waiting%5D)%0A        playing = f%22%7Bself.bico%7D%22 if self.bico else %22%5B%5D%22%0A        return f%22%7Bwaiting%7D =%3E %7Bplaying%7D%22%0A    %0Atrampolim = Trampoline()%0Aprint(trampolim)\n",
             "lines": "0"
+        },
+        {
+            "label": "2025-11-19_20-48-19",
+            "content": "@@ -427,23 +427,20 @@\n f%22%7Bself.\n-playing\n+bico\n %7D%22 if se\n",
+            "lines": "21"
+        },
+        {
+            "label": "2025-11-19_20-48-39",
+            "content": "@@ -445,23 +445,20 @@\n if self.\n-playing\n+bico\n  else %22%5B\n",
+            "lines": "21"
+        },
+        {
+            "label": "2025-11-19_20-49-59",
+            "content": "@@ -375,18 +375,16 @@\n x else %22\n-%5B%5D\n %22 for x \n",
+            "lines": "21"
+        },
+        {
+            "label": "2025-11-19_20-50-10",
+            "content": "@@ -153,17 +153,16 @@\n eturn f%22\n-%5B\n %7Bself.no\n@@ -177,17 +177,16 @@\n f.idade%7D\n-%5D\n %22%0A      \n@@ -375,16 +375,18 @@\n x else %22\n+%5B%5D\n %22 for x \n",
+            "lines": "21"
+        },
+        {
+            "label": "2025-11-19_20-51-36",
+            "content": "@@ -153,16 +153,17 @@\n eturn f%22\n+%5B\n %7Bself.no\n@@ -178,16 +178,17 @@\n f.idade%7D\n+%5D\n %22%0A      \n@@ -335,49 +335,8 @@\n f):%0A\n-        if self.waiting is not None:%0A    \n     \n@@ -407,50 +407,8 @@\n g%5D)%0A\n-        else:%0A            playing = %22%5B%5D%22%0A%0A\n     \n",
+            "lines": "21"
+        },
+        {
+            "label": "2025-11-19_20-53-13",
+            "content": "@@ -464,28 +464,28 @@\n             \n-wait\n+play\n ing = %22%5B%5D%22%0A%0A\n",
+            "lines": "25"
+        },
+        {
+            "label": "2025-11-19_20-53-46",
+            "content": "@@ -321,32 +321,73 @@\n  __str__(self):%0A\n+        if self.waiting is not None:%0A    \n         waiting \n@@ -442,16 +442,58 @@\n iting%5D)%0A\n+        else:%0A            waiting = %22%5B%5D%22%0A%0A\n         \n@@ -563,17 +563,16 @@\n eturn f%22\n-%5B\n %7Bwaiting\n@@ -572,17 +572,16 @@\n waiting%7D\n-%5D\n  =%3E %7Bpla\n",
+            "lines": "25"
+        },
+        {
+            "label": "2025-11-19_20-54-36",
+            "content": "@@ -310,132 +310,8 @@\n %5D%0A%0A%0A\n-%0A    def arrive(self, nome: str, idade: int):%0A        kid = Kid(nome, idade)%0A        self.waiting.append(kid)%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A\n     \n@@ -515,24 +515,8 @@\n    %0A\n-def main():%0A    \n tram\n@@ -540,342 +540,20 @@\n e()%0A\n-    while True:%0A        line = input()%0A        print(%22$%22+line)%0A        args = line.split()%0A        if args%5B0%5D == %22end%22:%0A            break%0A        elif args%5B0%5D == %22show%22:%0A            print(trampolim)%0A        elif args%5B0%5D == %22arrive%22:%0A            nome = args%5B1%5D%0A            idade = args%5B2%5D%0A            trampolim.arrive(nome, idade)%0A%0A%0Amain(\n+print(trampolim\n )\n",
+            "lines": "21"
+        },
+        {
+            "label": "2025-11-19_21-04-14",
+            "content": "@@ -472,16 +472,17 @@\n ting = %22\n+:\n %22.join(%5B\n",
+            "lines": "54"
+        },
+        {
+            "label": "2025-11-19_21-05-35",
+            "content": "@@ -472,18 +472,16 @@\n ting = %22\n-, \n %22.join(%5B\n",
+            "lines": "54"
+        },
+        {
+            "label": "2025-11-19_21-06-09",
+            "content": "@@ -105,16 +105,20 @@\n  idade%0A%0A\n+    \n     def \n@@ -124,32 +124,36 @@\n  __str__(self):%0A\n+    \n         return f\n",
+            "lines": "54"
+        },
+        {
+            "label": "2025-11-19_21-13-07",
+            "content": "@@ -953,20 +953,15 @@\n e = \n-int(\n args%5B2%5D\n-)\n %0A   \n",
+            "lines": "54"
+        },
+        {
+            "label": "2025-11-19_21-21-22",
+            "content": "@@ -285,30 +285,22 @@\n ng: \n-dict%5Bstr, \n+list%5B\n Kid%5D = \n-%7B%7D   \n+%5B%5D\n %0A%0A%0A%0A\n@@ -318,160 +318,101 @@\n ive(\n-kid: Kid):%0A        if kid.nome in self.waiting:%0A            raise Exception(%22fail: pessoa com o mesmo nome%22)%0A        self.waiting%5Bpessoa.nome%5D = pessoa%0A\n+self, nome: str, idade: int):%0A        kid = Kid(nome, idade)%0A        self.waiting.append(kid)\n %0A%0A%0A%0A\n",
+            "lines": "54"
+        },
+        {
+            "label": "2025-11-19_21-36-42",
+            "content": "@@ -1033,43 +1033,8 @@\n 2%5D)%0A\n-            kid = Kid(nome, idade)%0A\n     \n@@ -1058,19 +1058,27 @@\n .arrive(\n-kid\n+nome, idade\n )%0A%0A%0Amain\n",
+            "lines": "56"
+        },
+        {
+            "label": "2025-11-19_21-37-30",
+            "content": "@@ -322,22 +322,16 @@\n  arrive(\n-self, \n kid: Kid\n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-11-19_21-39-05",
+            "content": "@@ -458,19 +458,22 @@\n waiting%5B\n-kid\n+pessoa\n .nome%5D =\n@@ -473,16 +473,22 @@\n nome%5D = \n+pessoa\n %0A%0A%0A%0A%0A%0A%0A%0A\n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-11-19_21-39-45",
+            "content": "@@ -470,19 +470,16 @@\n nome%5D = \n-kid\n %0A%0A%0A%0A%0A%0A%0A%0A\n@@ -546,19 +546,15 @@\n str(\n-kid\n+x\n ) if \n-kid\n+x\n  els\n@@ -562,19 +562,17 @@\n  %22%22 for \n-kid\n+x\n  in self\n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-11-19_21-40-35",
+            "content": "@@ -540,16 +540,17 @@\n  %22.join(\n+%5B\n str(kid)\n@@ -592,17 +592,9 @@\n ting\n-.values()\n+%5D\n )%0A  \n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-11-19_21-43-02",
+            "content": "@@ -482,506 +482,10 @@\n %0A%0A%0A%0A\n-    def get_kid(self, nome: str):%0A        try:%0A            return self.waiting%5Bnome%5D%0A        except KeyError as _:%0A            raise Exception(f%22%7Bnome%7D j%C3%A1 existe%22)%0A%0A    def remove(self, nome:str):%0A        try:%0A            del self.waiting%5Bnome%5D%0A        except KeyError as _:%0A            raise Exception(f%22%7Bnome%7D invalido%22)%0A        %0A    def listar_kids(self) -%3E list%5BKid%5D:%0A        lista: list%5BKid%5D = %5B%5D%0A        for kid in self.waiting.values():%0A            lista.append(kid)%0A            return lista\n+%0A%0A\n %0A%0A%0A%0A\n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-11-20_00-40-00",
+            "content": "@@ -1076,26 +1076,29 @@\n in self.\n-listar_kid\n+waiting.value\n s())%0A   \n",
+            "lines": "71"
+        },
+        {
+            "label": "2025-11-20_00-41-35",
+            "content": "@@ -956,24 +956,28 @@\n id)%0A        \n+    \n return lista\n",
+            "lines": "71"
+        },
+        {
+            "label": "2025-11-20_00-42-42",
+            "content": "@@ -976,14 +976,8 @@\n ista\n-%5B::-1%5D\n %0A%0A%0A%0A\n",
+            "lines": "71"
+        },
+        {
+            "label": "2025-11-20_00-55-46",
+            "content": "@@ -983,128 +983,8 @@\n -1%5D%0A\n-    %0A%0A    def enter(self):%0A        kids = self.listar_kids()%0A        if kids:%0A            self.playing.append(list%5B-1%5D)%0A\n %0A%0A%0A%0A\n@@ -1610,70 +1610,8 @@\n id)%0A\n-        elif args%5B0%5D == %22enter%22:%0A            trampolim.enter()\n %0A%0Ama\n",
+            "lines": "71"
+        },
+        {
+            "label": "2025-11-20_01-03-00",
+            "content": "@@ -1089,20 +1089,20 @@\n .append(\n-kids\n+list\n %5B-1%5D)%0A%0A%0A\n",
+            "lines": "78"
+        },
+        {
+            "label": "2025-11-20_01-03-22",
+            "content": "@@ -1235,34 +1235,11 @@\n g = \n-%22, %22.join(str(k) for k in \n+f%22%7B\n self\n@@ -1246,17 +1246,18 @@\n .playing\n-)\n+%7D%22\n  if self\n@@ -1274,58 +1274,8 @@\n lse \n-%22%22%0A        playing = f%22%7Bplaying%7D%22 if playing else \n %22%5B%5D%22\n",
+            "lines": "78"
+        },
+        {
+            "label": "2025-11-20_01-06-33",
+            "content": "@@ -1252,37 +1252,33 @@\n (k) \n-if playing else %22%5B%5D%22 for k in\n+for k in self.playing) if\n  sel\n@@ -1286,17 +1286,24 @@\n .playing\n-)\n+ else %22%22\n %0A       \n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-20_01-07-32",
+            "content": "@@ -1252,33 +1252,37 @@\n (k) \n-for k in self.playing) if\n+if playing else %22%5B%5D%22 for k in\n  sel\n@@ -1290,24 +1290,17 @@\n .playing\n- else %22%22\n+)\n %0A       \n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-20_01-08-06",
+            "content": "@@ -1103,33 +1103,8 @@\n 1%5D)%0A\n-            del kids%5B-1%5D%0A\n %0A%0A%0A%0A\n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-20_01-09-48",
+            "content": "@@ -1120,18 +1120,16 @@\n el kids%5B\n-::\n -1%5D%0A%0A%0A%0A%0A\n",
+            "lines": "80"
+        },
+        {
+            "label": "2025-11-20_01-10-03",
+            "content": "@@ -1018,75 +1018,92 @@\n     \n-if self.waiting:%0A            ultimo = list(self.waiting.keys())\n+kids = self.listar_kids()%0A        if kids:%0A            self.playing.append(kids\n %5B-1%5D\n+)\n %0A   \n@@ -1115,38 +1115,23 @@\n     \n-kid = self.waiting.pop%5Bultimo%5D\n+del kids%5B::-1%5D%0A\n %0A%0A%0A%0A\n",
+            "lines": "80"
+        },
+        {
+            "label": "2025-11-20_01-13-57",
+            "content": "@@ -1129,45 +1129,8 @@\n mo%5D%0A\n-            self.playing.append(kid)%0A\n %0A%0A%0A%0A\n",
+            "lines": "78"
+        },
+        {
+            "label": "2025-11-20_01-20-46",
+            "content": "@@ -1120,16 +1120,16 @@\n .pop\n-(\n+%5B\n ultimo\n-)\n+%5D\n %0A   \n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-20_01-23-51",
+            "content": "@@ -1073,24 +1073,28 @@\n ting.keys())\n+%5B-1%5D\n %0A           \n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-20_01-24-57",
+            "content": "@@ -1077,19 +1077,16 @@\n .keys())\n-%5B1%5D\n %0A       \n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-20_01-25-16",
+            "content": "@@ -1043,23 +1043,21 @@\n         \n-primeir\n+ultim\n o = list\n@@ -1078,17 +1078,17 @@\n keys())%5B\n-0\n+1\n %5D%0A      \n@@ -1120,15 +1120,13 @@\n pop(\n-primeir\n+ultim\n o)%0A \n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-20_01-25-46",
+            "content": "@@ -1444,17 +1444,16 @@\n ng%7D%5D =%3E \n-%5B\n %7Bplaying\n@@ -1453,17 +1453,16 @@\n playing%7D\n-%5D\n %22%0A    %0Ad\n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-20_01-26-09",
+            "content": "@@ -1444,16 +1444,17 @@\n ng%7D%5D =%3E \n+%5B\n %7Bplaying\n@@ -1454,16 +1454,17 @@\n playing%7D\n+%5D\n %22%0A    %0Ad\n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-20_01-26-21",
+            "content": "@@ -1282,60 +1282,8 @@\n ())%0A\n-        waiting = f%22%7Bwaiting%7D%22 if waiting else %22%5B%5D%22%0A\n     \n@@ -1412,17 +1412,16 @@\n se %22%5B%5D%22%0A\n-%0A\n         \n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-20_01-27-13",
+            "content": "@@ -1497,17 +1497,16 @@\n ng%7D%5D =%3E \n-%5B\n %7Bplaying\n@@ -1506,17 +1506,16 @@\n playing%7D\n-%5D\n %22%0A    %0Ad\n",
+            "lines": "81"
+        },
+        {
+            "label": "2025-11-20_01-29-08",
+            "content": "@@ -1318,32 +1318,34 @@\n f waiting else %22\n+%5B%5D\n %22%0A        playin\n",
+            "lines": "81"
+        },
+        {
+            "label": "2025-11-20_01-29-25",
+            "content": "@@ -1278,16 +1278,66 @@\n kids())%0A\n+        waiting = f%22%7Bwaiting%7D%22 if waiting else %22%22%0A\n         \n",
+            "lines": "81"
+        },
+        {
+            "label": "2025-11-20_01-30-00",
+            "content": "@@ -1408,16 +1408,18 @@\n g else %22\n+%5B%5D\n %22%0A%0A     \n",
+            "lines": "80"
+        },
+        {
+            "label": "2025-11-20_01-30-10",
+            "content": "@@ -1282,53 +1282,8 @@\n ())%0A\n-        listaplaying = list(self.playing)%5B0%5D%0A\n     \n@@ -1322,21 +1322,21 @@\n or k in \n-lista\n+self.\n playing)\n@@ -1339,21 +1339,21 @@\n ing) if \n-lista\n+self.\n playing \n",
+            "lines": "80"
+        },
+        {
+            "label": "2025-11-20_01-33-06",
+            "content": "@@ -1278,16 +1278,61 @@\n kids())%0A\n+        listaplaying = list(self.playing)%5B0%5D%0A\n         \n@@ -1367,21 +1367,21 @@\n or k in \n-self.\n+lista\n playing)\n@@ -1384,21 +1384,21 @@\n ing) if \n-self.\n+lista\n playing \n",
+            "lines": "81"
+        },
+        {
+            "label": "2025-11-20_01-33-49",
+            "content": "@@ -1080,18 +1080,17 @@\n keys())%5B\n--1\n+0\n %5D%0A      \n",
+            "lines": "80"
+        },
+        {
+            "label": "2025-11-20_01-38-28",
+            "content": "@@ -1080,17 +1080,18 @@\n keys())%5B\n-0\n+-1\n %5D%0A      \n",
+            "lines": "80"
+        },
+        {
+            "label": "2025-11-20_01-38-38",
+            "content": "@@ -1169,48 +1169,8 @@\n id)%0A\n-            self.playing.insert(0, kid)%0A\n %0A%0A%0A%0A\n",
+            "lines": "80"
+        },
+        {
+            "label": "2025-11-20_01-41-54",
+            "content": "@@ -1128,16 +1128,53 @@\n imeiro)%0A\n+            self.playing.append(kid)%0A\n         \n",
+            "lines": "81"
+        },
+        {
+            "label": "2025-11-20_01-42-23",
+            "content": "@@ -1174,96 +1174,8 @@\n )%0A%0A%0A\n-    def leave(self):%0A        self.arrive(self.playing%5B-1%5D)%0A        del self.playing%5B-1%5D%0A\n %0A%0A%0A%0A\n",
+            "lines": "80"
+        },
+        {
+            "label": "2025-11-20_01-45-10",
+            "content": "@@ -2021,71 +2021,8 @@\n er()\n-%0A        elif args%5B0%5D == %22leave%22:%0A            trampolim.leave()\n %0A%0Ama\n",
+            "lines": "83"
+        },
+        {
+            "label": "2025-11-20_01-45-39",
+            "content": "@@ -687,31 +687,11 @@\n     \n-if nome in self.waiting\n+try\n :%0A  \n@@ -735,149 +735,34 @@\n     \n-    return%0A        for kid in self.playing:%0A            if kid.nome == nome:%0A                self.playing.remove(kid)%0A                return%0A\n+except KeyError as _:%0A    \n     \n@@ -794,20 +794,14 @@\n me%7D \n-nao encontra\n+invali\n do%22)\n",
+            "lines": "85"
+        },
+        {
+            "label": "2025-11-20_01-50-55",
+            "content": "@@ -2225,80 +2225,8 @@\n ve()\n-%0A        elif args%5B0%5D == %22remove%22:%0A            trampolim.remove(args%5B1%5D)\n %0A%0Ama\n",
+            "lines": "89"
+        },
+        {
+            "label": "2025-11-20_01-51-42",
+            "content": "@@ -1344,103 +1344,20 @@\n     \n-if not self.playing:%0A            raise Exception(%22fail: ningu%C3%A9m est%C3%A1 brincando%22)%0A        kid = \n+self.arrive(\n self\n@@ -1364,21 +1364,20 @@\n .playing\n-.pop(\n+%5B-1%5D\n )%0A      \n@@ -1382,36 +1382,29 @@\n     \n+del \n self.\n-waiting%5Bkid.nome%5D = kid\n+playing%5B-1%5D%0A\n %0A%0A%0A%0A\n",
+            "lines": "91"
+        },
+        {
+            "label": "2025-11-20_01-55-08",
+            "content": "@@ -1324,32 +1324,121 @@\n ef leave(self):%0A\n+        if not self.playing:%0A            raise Exception(%22fail: ningu%C3%A9m est%C3%A1 brincando%22)%0A\n         kid = se\n",
+            "lines": "92"
+        },
+        {
+            "label": "2025-11-20_01-55-29",
+            "content": "@@ -378,57 +378,8 @@\n ting\n- or any(k.nome == kid.nome for k in self.playing)\n :%0A  \n",
+            "lines": "90"
+        },
+        {
+            "label": "2025-11-20_01-57-08",
+            "content": "@@ -1385,97 +1385,8 @@\n f):%0A\n-        if not self.playing:%0A            raise Exception(%22fail: ningu%C3%A9m est%C3%A1 brincando%22)%0A\n     \n",
+            "lines": "90"
+        },
+        {
+            "label": "2025-11-20_01-58-15",
+            "content": "@@ -1437,16 +1437,48 @@\n xception\n+(%22fail: ningu%C3%A9m est%C3%A1 brincando%22)\n %0A       \n",
+            "lines": "92"
+        },
+        {
+            "label": "2025-11-20_02-00-31",
+            "content": "@@ -1373,32 +1373,89 @@\n ef leave(self):%0A\n+        if not self.playing:%0A            raise Exception%0A\n         kid = se\n",
+            "lines": "92"
+        },
+        {
+            "label": "2025-11-20_02-00-44",
+            "content": "@@ -1385,56 +1385,8 @@\n f):%0A\n-        if not self.playing:%0A            return%0A\n     \n",
+            "lines": "90"
+        },
+        {
+            "label": "2025-11-20_02-01-44",
+            "content": "@@ -953,68 +953,47 @@\n     \n-else:%0A            print(f%22fail: %7Bnome%7D nao esta no pula-pula\n+raise Exception(f%22%7Bnome%7D nao encontrado\n %22)%0A \n",
+            "lines": "92"
+        },
+        {
+            "label": "2025-11-20_02-03-27",
+            "content": "class Kid:\n    def __init__(self, nome: str , idade: int):\n        self.nome = nome\n        self.idade = idade\n\n    def __str__(self):\n        return f\"{self.nome}:{self.idade}\"\n        \nclass Trampoline:\n    def __init__(self):\n        self.playing: list[Kid] = []\n        self.waiting: dict[str, Kid] = {}   \n\n\n\n    def arrive(self, kid: Kid):\n        if kid.nome in self.waiting or any(k.nome == kid.nome for k in self.playing):\n            raise Exception(\"fail: pessoa com o mesmo nome\")\n        self.waiting[kid.nome] = kid\n\n\n\n\n    def get_kid(self, nome: str):\n        try:\n            return self.waiting[nome]\n        except KeyError as _:\n            raise Exception(f\"{nome} j\u00e1 existe\")\n\n    def remove(self, nome:str):\n        if nome in self.waiting:\n            del self.waiting[nome]\n            return\n        for kid in self.playing:\n            if kid.nome == nome:\n                self.playing.remove(kid)\n                return\n        else:\n            print(f\"fail: {nome} nao esta no pula-pula\")\n        \n    def listar_kids(self) -> list[Kid]:\n        lista: list[Kid] = []\n        for kid in self.waiting.values():\n            lista.append(kid)\n        return lista[::-1]\n    \n\n    def enter(self):\n        if self.waiting:\n            primeiro = list(self.waiting.keys())[0]\n            kid = self.waiting.pop(primeiro)\n            self.playing.insert(0, kid)\n\n\n    def leave(self):\n        if not self.playing:\n            return\n        kid = self.playing.pop()\n        self.waiting[kid.nome] = kid\n\n\n\n\n    def __str__(self):\n        waiting = \", \".join(str(kid) if kid else \"\" for kid in self.listar_kids())\n        playing = \", \".join(str(k) for k in self.playing) if self.playing else \"\"\n        playing = f\"{playing}\" if playing else \"\"\n\n        return f\"[{waiting}] => [{playing}]\"\n    \ndef main():\n    trampolim = Trampoline()\n    while True:\n        line = input()\n        print(\"$\"+line)\n        args = line.split()\n        if args[0] == \"end\":\n            break\n        elif args[0] == \"show\":\n            print(trampolim)\n        elif args[0] == \"arrive\":\n            nome = args[1]\n            idade = int(args[2])\n            kid = Kid(nome, idade)\n            trampolim.arrive(kid)\n        elif args[0] == \"enter\":\n            trampolim.enter()\n        elif args[0] == \"leave\":\n            trampolim.leave()\n        elif args[0] == \"remove\":\n            trampolim.remove(args[1])\n\nmain()",
+            "lines": "93"
         }
     ]
 }
