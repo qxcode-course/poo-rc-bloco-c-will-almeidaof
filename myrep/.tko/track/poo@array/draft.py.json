@@ -1,0 +1,44 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-20_03-02-09",
+            "content": "@@ -1,19 +1,17 @@\n class \n-Aluno\n+Kid\n :%0A    de\n@@ -36,16 +36,29 @@\n ome: str\n+ , idade: int\n ):%0A     \n@@ -73,14 +73,55 @@\n nome\n- = nom\n+: dict%5Bstr, Kid%5D = %7B%7D%0A        self.idade = idad\n e%0A%0A \n@@ -174,47 +174,470 @@\n ome%7D\n-%22%0A    %0A%0Aaluno = Aluno(%22Will%22)%0Aprint(aluno)%0A\n+:%7Bself.idade%7D%22%0A        %0Aclass Trampoline:%0A    def __init__(self):%0A        self.playing: list%5BKid%5D = %5B%5D%0A        self.waiting: list%5BKid%5D = %5B%5D%0A%0A%0A%0A    def arrive(self, nome: str, idade: int):%0A        kid = Kid(nome, idade)%0A        self.waiting.append(kid)%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A    def __str__(self):%0A        waiting = %22, %22.join(%5Bstr(x) if x else %22%22 for x in self.waiting%5D)%0A        playing = f%22%7Bself.playing%7D%22 if self.playing else %22%5B%5D%22%0A        return f%22%5B%7Bwaiting%7D%5D =%3E %7Bplaying%7D%22\n",
+            "lines": "36"
+        },
+        {
+            "label": "2025-11-20_03-11-30",
+            "content": "@@ -130,190 +130,8 @@\n   %0A%0A\n-%0A%0A%0A%0A%0A%0Aclass Onibus:%0A    def __init__(self, n_cadeiras: int):%0A        self.cadeiras: list%5BAluno%7CNone%5D = %5B%5D%0A        for _ in range(n_cadeiras):%0A            self.cadeiras.append(None)%0A%0A\n alun\n@@ -165,31 +165,4 @@\n no)%0A\n-bus = Onibus(4)%0Aprint(bus)%0A\n",
+            "lines": "10"
+        },
+        {
+            "label": "2025-11-20_03-14-13",
+            "content": "@@ -312,137 +312,8 @@\n e)%0A%0A\n-%0A    def __str__(self):%0A        cadeiras = %22 %22.join(%5Bstr(x) if x else %22-%22 for x in self.cadeiras%5D)%0A        return f%22%5Bcadeiras%5D%22%0A%0A\n alun\n",
+            "lines": "24"
+        },
+        {
+            "label": "2025-11-20_03-15-41",
+            "content": "@@ -429,17 +429,16 @@\n  f%22%5B\n-%7B\n cadeiras\n %7D%5D%22%0A\n@@ -433,17 +433,16 @@\n cadeiras\n-%7D\n %5D%22%0A%0Aalun\n",
+            "lines": "29"
+        },
+        {
+            "label": "2025-11-20_03-15-50",
+            "content": "@@ -313,118 +313,8 @@\n )%0A%0A%0A\n-%0A    def add(self, nome: str, index: int):%0A        aluno = Aluno(nome)%0A        self.cadeiras%5Bindex%5D = aluno%0A%0A%0A\n     \n@@ -505,32 +505,4 @@\n us)%0A\n-bus.add(%22will%22,2)%0Aprint(bus)\n",
+            "lines": "29"
+        },
+        {
+            "label": "2025-11-20_03-18-13",
+            "content": "@@ -423,130 +423,8 @@\n o%0A%0A%0A\n-    def remove(self, index: int):%0A        aux = self.cadeiras%5Bindex%5D%0A        del self.cadeiras%5Bindex%5D%0A        return aux%0A%0A\n     \n@@ -549,16 +549,51 @@\n ras%7D%5D%22%0A%0A\n+aluno = Aluno(%22Will%22)%0Aprint(aluno)%0A\n bus = On\n@@ -643,29 +643,4 @@\n bus)\n-%0Abus.remove(2)%0Aprint(bus)\n",
+            "lines": "37"
+        },
+        {
+            "label": "2025-11-20_03-20-28",
+            "content": "@@ -488,32 +488,36 @@\n %5Bindex%5D%0A        \n+del \n self.cadeiras%5Bin\n@@ -524,15 +524,8 @@\n dex%5D\n- = None\n %0A   \n",
+            "lines": "42"
+        },
+        {
+            "label": "2025-11-20_03-20-42",
+            "content": "class Aluno:\n    def __init__(self, nome: str):\n        self.nome = nome\n\n    def __str__(self):\n        return f\"{self.nome}\"\n    \n\n\n\n\n\n\n\nclass Onibus:\n    def __init__(self, n_cadeiras: int):\n        self.cadeiras: list[Aluno|None] = []\n        for _ in range(n_cadeiras):\n            self.cadeiras.append(None)\n\n\n\n    def add(self, nome: str, index: int):\n        aluno = Aluno(nome)\n        self.cadeiras[index] = aluno\n\n\n    def remove(self, index: int):\n        aux = self.cadeiras[index]\n        self.cadeiras[index] = None\n        return aux\n\n    def __str__(self):\n        cadeiras = \" \".join([str(x) if x else \"-\" for x in self.cadeiras])\n        return f\"[{cadeiras}]\"\n\nbus = Onibus(4)\nprint(bus)\nbus.add(\"will\",2)\nprint(bus)\nbus.remove(2)\nprint(bus)",
+            "lines": "42"
+        }
+    ]
+}

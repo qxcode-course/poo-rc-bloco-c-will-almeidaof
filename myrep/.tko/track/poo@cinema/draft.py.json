@@ -1,0 +1,139 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-20_02-18-36",
+            "content": "@@ -382,71 +382,8 @@\n f):%0A\n-        cadeiras = %5Bstr(x) for x in self.cadeiras else %22----%22%5D%0A\n     \n",
+            "lines": "28"
+        },
+        {
+            "label": "2025-11-20_02-20-16",
+            "content": "@@ -408,32 +408,8 @@\n r(x)\n- if cadeiras else %22----%22\n  for\n@@ -427,16 +427,28 @@\n cadeiras\n+ else %22----%22\n %5D%0A      \n",
+            "lines": "29"
+        },
+        {
+            "label": "2025-11-20_02-20-56",
+            "content": "@@ -408,21 +408,16 @@\n r(x) if \n-self.\n cadeiras\n",
+            "lines": "29"
+        },
+        {
+            "label": "2025-11-20_02-21-09",
+            "content": "@@ -476,16 +476,21 @@\n turn f%22%7B\n+self.\n cadeiras\n",
+            "lines": "29"
+        },
+        {
+            "label": "2025-11-20_02-21-21",
+            "content": "@@ -412,16 +412,21 @@\n  if \n-not None\n+self.cadeiras\n  els\n",
+            "lines": "29"
+        },
+        {
+            "label": "2025-11-20_02-22-02",
+            "content": "@@ -401,18 +401,8 @@\n s = \n-%22, %22.join(\n %5Bstr\n@@ -408,17 +408,24 @@\n r(x) if \n-x\n+not None\n  else %22-\n@@ -452,17 +452,16 @@\n adeiras%5D\n-)\n %0A       \n@@ -471,21 +471,16 @@\n turn f%22%7B\n-self.\n cadeiras\n",
+            "lines": "29"
+        },
+        {
+            "label": "2025-11-20_02-23-43",
+            "content": "@@ -475,16 +475,21 @@\n turn f%22%7B\n+self.\n cadeiras\n",
+            "lines": "29"
+        },
+        {
+            "label": "2025-11-20_02-24-24",
+            "content": "@@ -427,16 +427,19 @@\n  else %22-\n+---\n %22 for x \n",
+            "lines": "29"
+        },
+        {
+            "label": "2025-11-20_02-24-41",
+            "content": "@@ -398,16 +398,17 @@\n iras = %22\n+,\n  %22.join(\n",
+            "lines": "29"
+        },
+        {
+            "label": "2025-11-20_02-24-47",
+            "content": "@@ -470,17 +470,16 @@\n eturn f%22\n-%5B\n %7Bcadeira\n@@ -484,17 +484,16 @@\n ras%7D\n-%5D\n %22%0A    %0A%0A\n %0A%0A%0A%0A\n@@ -492,28 +492,8 @@\n   %0A%0A\n-%0A%0A%0A%0Adef main():%0A    \n sala\n@@ -504,211 +504,18 @@\n ala(\n-0)%0A    while True:%0A        line = input()%0A        print(%22$%22+line)%0A        args = line.split()%0A        if args%5B0%5D == %22end%22:%0A            break%0A        elif args%5B0%5D == %22show%22:%0A            print(sala)%0A%0A%0A%0A%0Amain(\n+3)%0Aprint(sala\n )\n",
+            "lines": "29"
+        },
+        {
+            "label": "2025-11-20_02-27-36",
+            "content": "@@ -723,77 +723,8 @@\n la)%0A\n-        elif args%5B0%5D == %22init%22:%0A            sala = Sala(int(args%5B1%5D))\n %0A%0A%0A%0A\n",
+            "lines": "46"
+        },
+        {
+            "label": "2025-11-20_02-28-14",
+            "content": "@@ -359,102 +359,8 @@\n e)%0A%0A\n-%0A%0A    def add(self, cliente: Cliente, index: int):%0A        self.cadeiras%5Bindex%5D = cliente%0A%0A%0A%0A%0A\n     \n@@ -793,183 +793,8 @@\n %5D))%0A\n-        elif args%5B0%5D == %22reserve%22:%0A            id = args%5B1%5D%0A            phone = int(args%5B2%5D)%0A            cliente = Cliente(id,phone)%0A            sala.add(cliente,int(args%5B3%5D))\n %0A%0A%0Am\n",
+            "lines": "47"
+        },
+        {
+            "label": "2025-11-20_02-32-46",
+            "content": "@@ -410,116 +410,8 @@\n t):%0A\n-        if self.cadeiras is not None:%0A            print(%22fail: cadeira ja esta ocupada%22)%0A            return%0A\n     \n",
+            "lines": "59"
+        },
+        {
+            "label": "2025-11-20_02-33-43",
+            "content": "@@ -430,23 +430,16 @@\n cadeiras\n-%5Bindex%5D\n  is not \n",
+            "lines": "62"
+        },
+        {
+            "label": "2025-11-20_02-34-36",
+            "content": "@@ -375,35 +375,32 @@\n d(self, \n-id: str, phone: i\n+cliente: Clie\n nt\n+e\n , index:\n@@ -525,159 +525,8 @@\n urn%0A\n-        for cliente in self.cadeiras:%0A            if cliente.id == id:%0A                print(%22fail: cliente ja esta no cinema%22)%0A                return%0A\n     \n",
+            "lines": "62"
+        },
+        {
+            "label": "2025-11-20_02-38-32",
+            "content": "@@ -1306,23 +1306,22 @@\n ala.add(\n-id,phon\n+client\n e,int(ar\n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-11-20_02-38-53",
+            "content": "@@ -111,112 +111,8 @@\n e%0A%0A%0A\n-    def get_id(self):%0A        return self.__id%0A    def set_id(self, id: str):%0A        self.__id = id%0A%0A%0A%0A\n     \n@@ -589,16 +589,10 @@\n nte.\n-get_id()\n+id\n  == \n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-11-20_02-40-33",
+            "content": "@@ -517,54 +517,8 @@\n t):%0A\n-        cliente: Cliente = Cliente(id, phone)%0A\n     \n",
+            "lines": "73"
+        },
+        {
+            "label": "2025-11-20_02-44-45",
+            "content": "@@ -528,17 +528,16 @@\n  cliente\n-s\n : Client\n@@ -555,24 +555,24 @@\n (id, phone)%0A\n+\n         if s\n@@ -693,17 +693,16 @@\n  cliente\n-s\n  in self\n@@ -734,17 +734,16 @@\n  cliente\n-s\n .get_id(\n@@ -823,32 +823,32 @@\n          return%0A\n+\n         self.cad\n@@ -869,17 +869,16 @@\n  cliente\n-s\n %0A%0A%0A%0A%0A   \n",
+            "lines": "74"
+        },
+        {
+            "label": "2025-11-20_02-45-19",
+            "content": "@@ -688,16 +688,23 @@\n    for c\n+lientes\n  in self\n@@ -730,16 +730,23 @@\n     if c\n+lientes\n .get_id(\n@@ -866,16 +866,23 @@\n dex%5D = c\n+lientes\n %0A%0A%0A%0A%0A   \n",
+            "lines": "74"
+        },
+        {
+            "label": "2025-11-20_02-46-45",
+            "content": "@@ -528,16 +528,17 @@\n  cliente\n+s\n : Client\n@@ -852,22 +852,16 @@\n dex%5D = c\n-liente\n %0A%0A%0A%0A%0A   \n",
+            "lines": "74"
+        },
+        {
+            "label": "2025-11-20_02-47-20",
+            "content": "@@ -367,13 +367,8 @@\n as: \n-list%5B\n None\n@@ -377,17 +377,16 @@\n  Cliente\n-%5D\n  = %5B%5D%0A  \n",
+            "lines": "74"
+        },
+        {
+            "label": "2025-11-20_02-49-18",
+            "content": "@@ -731,26 +731,8 @@\n  if \n-c is not None and \n c.ge\n",
+            "lines": "74"
+        },
+        {
+            "label": "2025-11-20_02-51-04",
+            "content": "@@ -569,125 +569,8 @@\n ne)%0A\n-        if index %3E len(self.cadeiras) or index %3C 0:%0A            print(%22fail: cadeira nao existe%22)%0A            return%0A\n     \n",
+            "lines": "74"
+        },
+        {
+            "label": "2025-11-20_02-53-45",
+            "content": "@@ -1007,174 +1007,8 @@\n %0A%0A%0A%0A\n-    def cancel(self, id: str):%0A        for c in self.cadeiras:%0A            if c is not None and c.get_id() == id:%0A                self.cadeiras%5Bc%5D = None%0A%0A        %0A%0A%0A\n     \n@@ -1618,99 +1618,8 @@\n %5D))%0A\n-        elif args%5B0%5D == %22cancel%22:%0A            nome = args%5B1%5D%0A            sala.cancel(nome)%0A\n %0A%0Ama\n",
+            "lines": "77"
+        },
+        {
+            "label": "2025-11-20_02-57-20",
+            "content": "@@ -1049,27 +1049,14 @@\n  for\n- i,\n  c in \n-enumerate(\n self\n@@ -1056,33 +1056,32 @@\n in self.cadeiras\n-)\n :%0A            if\n@@ -1147,17 +1147,17 @@\n adeiras%5B\n-i\n+c\n %5D = None\n@@ -1157,24 +1157,25 @@\n  = None%0A\n+%0A\n         \n         \n@@ -1170,73 +1170,8 @@\n     \n-        return%0A        print(%22fail: cliente nao esta no cinema%22)%0A\n %0A%0A%0A \n",
+            "lines": "88"
+        },
+        {
+            "label": "2025-11-20_02-59-15",
+            "content": "class Cliente:\n    def __init__(self, id: str, phone: int):\n        self.__id = id\n        self.__phone = phone\n\n\n    def get_id(self):\n        return self.__id\n    def set_id(self, id: str):\n        self.__id = id\n\n\n\n    def __str__(self):\n        return f\"{self.__id}:{self.__phone}\"\n\n\n\n\n\n\n\n\nclass Sala:\n    def __init__(self, n_cadeiras: int):\n        self.cadeiras: list[None | Cliente] = []\n        for _ in range(n_cadeiras):\n            self.cadeiras.append(None)\n\n\n\n    def add(self, id: str, phone: int, index: int):\n        cliente: Cliente = Cliente(id, phone)\n        if index > len(self.cadeiras) or index < 0:\n            print(\"fail: cadeira nao existe\")\n            return\n        if self.cadeiras[index] is not None:\n            print(\"fail: cadeira ja esta ocupada\")\n            return\n        for c in self.cadeiras:\n            if c is not None and c.get_id() == id:\n                print(\"fail: cliente ja esta no cinema\")\n                return\n        self.cadeiras[index] = cliente\n\n\n\n\n    def cancel(self, id: str):\n        for i, c in enumerate(self.cadeiras):\n            if c is not None and c.get_id() == id:\n                self.cadeiras[i] = None\n                return\n        print(\"fail: cliente nao esta no cinema\")\n\n\n\n    def __str__(self):\n        cadeiras = \" \".join([str(x) if x else \"-\" for x in self.cadeiras])\n        return f\"[{cadeiras}]\"\n    \n\n\n\n\n\ndef main():\n    sala = Sala(0)\n    while True:\n        line = input()\n        print(\"$\"+line)\n        args = line.split()\n        if args[0] == \"end\":\n            break\n        elif args[0] == \"show\":\n            print(sala)\n        elif args[0] == \"init\":\n            sala = Sala(int(args[1]))\n        elif args[0] == \"reserve\":\n            id = args[1]\n            phone = int(args[2])\n            cliente = Cliente(id,phone)\n            sala.add(id,phone,int(args[3]))\n        elif args[0] == \"cancel\":\n            nome = args[1]\n            sala.cancel(nome)\n\n\nmain()",
+            "lines": "89"
+        }
+    ]
+}

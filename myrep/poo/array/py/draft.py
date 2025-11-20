@@ -1,21 +1,10 @@
-class Kid:
-    def __init__(self, nome: str , idade: int):
-        self.nome: dict[str, Kid] = {}
-        self.idade = idade
+class Aluno:
+    def __init__(self, nome: str):
+        self.nome = nome
 
     def __str__(self):
-        return f"{self.nome}:{self.idade}"
-        
-class Trampoline:
-    def __init__(self):
-        self.playing: list[Kid] = []
-        self.waiting: list[Kid] = []
-
-
-
-    def arrive(self, nome: str, idade: int):
-        kid = Kid(nome, idade)
-        self.waiting.append(kid)
+        return f"{self.nome}"
+    
 
 
 
@@ -23,14 +12,31 @@ class Trampoline:
 
 
 
+class Onibus:
+    def __init__(self, n_cadeiras: int):
+        self.cadeiras: list[Aluno|None] = []
+        for _ in range(n_cadeiras):
+            self.cadeiras.append(None)
 
 
 
+    def add(self, nome: str, index: int):
+        aluno = Aluno(nome)
+        self.cadeiras[index] = aluno
 
 
-
+    def remove(self, index: int):
+        aux = self.cadeiras[index]
+        self.cadeiras[index] = None
+        return aux
 
     def __str__(self):
-        waiting = ", ".join([str(x) if x else "" for x in self.waiting])
-        playing = f"{self.playing}" if self.playing else "[]"
-        return f"[{waiting}] => {playing}"
+        cadeiras = " ".join([str(x) if x else "-" for x in self.cadeiras])
+        return f"[{cadeiras}]"
+
+bus = Onibus(4)
+print(bus)
+bus.add("will",2)
+print(bus)
+bus.remove(2)
+print(bus)
